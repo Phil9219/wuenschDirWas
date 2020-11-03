@@ -1,12 +1,11 @@
 import styled from 'styled-components/macro';
 
 const ButtonTemplate = styled.button`
-  /* display: flex; */
-  position: absolute;
-  bottom: 0;
-  right: 70px;
+  position: ${(props) => props.navigation && 'absolute'};
+  bottom: ${(props) => props.navigation && '50px'};
+  right: ${(props) => props.navigation && '150px'};
   border: none;
-  margin: 30px auto;
+  margin: 20px;
   background: aquamarine;
   border-radius: 50%;
   font-size: 3rem;
@@ -14,8 +13,7 @@ const ButtonTemplate = styled.button`
   height: 80px;
   cursor: pointer;
   box-shadow: 0 10px 20px lightblue;
+  color: white;
 `;
 // eslint-disable-next-line
-export default function Button({ children }) {
-  return <ButtonTemplate> {children} </ButtonTemplate>;
-}
+export default ButtonTemplate;
