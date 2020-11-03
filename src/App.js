@@ -1,68 +1,62 @@
-import styled, { keyframes } from 'styled-components/macro';
+/* eslint-disable jsx-a11y/accessible-emoji */
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import styled from 'styled-components';
+import Button from './components/Button';
+import WishListItem from './components/WishlistItems';
 import GlobalStyle from './GlobalStyle';
-import logo from './logo.svg';
 
-const logoSpin = keyframes`
-  from {
-    transform: rotate(0deg);
+const UL = styled.ul`
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  & > * {
+    margin: 1rem;
   }
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
-const Wrapper = styled.div`
-  text-align: center;
-
-  header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-
-  header img {
-    height: 40vmin;
-    pointer-events: none;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    header img {
-      animation: ${logoSpin} infinite 20s linear;
-    }
-  }
-`;
-
-const Link = styled.a`
-  color: #61dafb;
 `;
 
 function App() {
   return (
-    <>
+    <Router>
+      <UL>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contacts</Link>
+        </li>
+        <li>
+          <Link to="/aboutUs">About Us</Link>
+        </li>
+        <li>
+          <Link to="/imprint">Imprint</Link>
+        </li>
+      </UL>
       <GlobalStyle />
-      <Wrapper>
-        <header>
-          <img src={logo} alt="logo" />
-          <p>
-            Edit
-            <code>src/App.js</code>
-            and save to reload.
-          </p>
-          <Link
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </Link>
-        </header>
-      </Wrapper>
-    </>
+      <Switch>
+        <Route path="/contact">
+          Contacts
+          <h3>Numbers - Email - and other stuff</h3>
+          <p>This is the part of the website where you find my contacs </p>
+          <ol>
+            <li>XXX</li>
+            <li>OOO</li>
+            <li>III</li>
+          </ol>
+        </Route>
+        <Route path="/aboutUs">About Us</Route>
+        <Route path="/imprint">
+          Imprint
+          <h3>REALLY IMPORTANT</h3>
+        </Route>
+
+        <Route path="/">
+          <WishListItem title="Make a Wish" />
+
+          <Button>🎁</Button>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
