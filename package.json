@@ -9,6 +9,7 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "styled-components": "^5.2.1",
     "web-vitals": "^0.2.4"
@@ -19,7 +20,7 @@
     "build:storybook": "build-storybook -s public --no-dll -o build/storybook",
     "build": "npm run build:app && npm run build:storybook",
     "stylelint": "stylelint \"**/*.{js,jsx,css}\"",
-    "eslint": "eslint \"**/*.{js,jsx}\"",
+    "eslint": "eslint \"**/*.{js,jsx}\"--max-warning=0",
     "prettier": "prettier --check \"**/*.{js,jsx,ts,tsx,md,mdx,html,css,json}\"",
     "test:watch": "react-scripts test",
     "test": "react-scripts test --watchAll=false && npm run stylelint && npm run eslint && npm run prettier",
@@ -73,8 +74,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm test"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
