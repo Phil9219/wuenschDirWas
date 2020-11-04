@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import WishListItem from '../components/WishlistItems';
+import { getLists } from '../api/lists';
 
 export default function Wishlist() {
+  const [list, setList] = useState(null);
+
+  useEffect(async () => {
+    const lists = await getLists();
+    setList(lists);
+  }, []);
+
   return (
     <div>
+      {list?.map((item) => (
+        <Link to={`/wish/${item.title}`} key={item.id}>
+          <WishListItem title={item.title} />{' '}
+        </Link>
+      ))}
+      {/* 
       <Link to="/wish/Philipp">
         <WishListItem title="Philipp's List" />
       </Link>
@@ -16,8 +30,8 @@ export default function Wishlist() {
         <WishListItem title="Atahans List" />
       </Link>
       <Link to="/add">
-        <Button>{/* <span>🎁</span> */}+</Button>
-      </Link>
+        // <Button>{/* <span>🎁</span> +</Button>
+      </Link> */}
     </div>
   );
 }
