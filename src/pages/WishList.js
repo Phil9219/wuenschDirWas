@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../components/Button';
+// import Button from '../components/Button';
 import WishListItem from '../components/WishlistItems';
-import { getLists } from '../api/lists';
+import { getLists, getListsById } from '../api/lists';
 
 export default function Wishlist() {
   const [list, setList] = useState(null);
@@ -15,7 +15,7 @@ export default function Wishlist() {
   return (
     <div>
       {list?.map((item) => (
-        <Link to={`/wish/${item.title}`} key={item.id}>
+        <Link to={`/wish/${item.id}`} key={item.id}>
           <WishListItem title={item.title} />{' '}
         </Link>
       ))}

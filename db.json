@@ -2,7 +2,8 @@
   "lists": [
     {
       "id": 1,
-      "title": "Philipp's List"
+      "title": "Philipp's List",
+      "wishes": ["Socken", "Bäume", "Tische", "Vögel"]
     },
     {
       "id": 2,
