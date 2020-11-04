@@ -5,10 +5,10 @@ import Button from '../components/Button';
 export default function Add() {
   return (
     <div>
-      <h2>Hallo</h2>
+      <h2>ADD</h2>
+      <input />
       <Link to="/">
         <Button>⬅</Button>
-        {/* <button type="button">Get Back</button> */}
       </Link>
     </div>
   );
