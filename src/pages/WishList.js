@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import Button from '../components/Button';
+import Button from '../components/Button';
 import WishListItem from '../components/WishlistItems';
 import { getLists, getListsById } from '../api/lists';
 
@@ -19,19 +19,19 @@ export default function Wishlist() {
           <WishListItem title={item.title} />{' '}
         </Link>
       ))}
-      {/* 
-      <Link to="/wish/Philipp">
-        <WishListItem title="Philipp's List" />
-      </Link>
-      <Link to="/wish/Alexis">
-        <WishListItem title="Alexis List" />
-      </Link>
-      <Link to="/wish/Atahans">
-        <WishListItem title="Atahans List" />
-      </Link>
       <Link to="/add">
-        // <Button>{/* <span>🎁</span> +</Button>
-      </Link> */}
+        <Button>+</Button>
+      </Link>
+
+      {/* // <Link to="/wish/Philipp">
+      //   <WishListItem title="Philipp's List" />
+      // </Link>
+      // <Link to="/wish/Alexis">
+      //   <WishListItem title="Alexis List" />
+      // </Link>
+      // <Link to="/wish/Atahans">
+      //   <WishListItem title="Atahans List" />
+      // </Link> */}
     </div>
   );
 }

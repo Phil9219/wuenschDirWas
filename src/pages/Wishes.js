@@ -28,7 +28,7 @@ export default function Wishes() {
       </ul>
 
       <Link to="/add">
-        <Button>{/* <span>🎁</span> */}+</Button>
+        <Button>{/* <span>🎁</span> */}⬅</Button>
       </Link>
     </div>
   );
