@@ -9,3 +9,8 @@ export async function getListsById(id) {
   const list = await response.json();
   return list;
 }
+export async function deleteListsById(id) {
+  await fetch(`http://localhost:5000/lists/${id}`, {
+    method: 'DELETE',
+  });
+}

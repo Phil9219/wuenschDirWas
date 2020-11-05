@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import Button from '../components/Button';
 
-import { getListsById } from '../api/lists';
+import { deleteListsById, getListsById } from '../api/lists';
 
 export default function Wishes() {
   const { listId } = useParams();
+  const history = useHistory();
   const [wishItem, setWishItem] = useState(null);
   useEffect(async () => {
     const lists = await getListsById(listId);
     setWishItem(lists);
   }, []);
+
+  const handleDelete = async () => {
+    await deleteListsById(listId);
+    history.push('/');
+  };
   return (
     <div>
       <h2>List Of {wishItem?.title}</h2>
@@ -30,6 +36,8 @@ export default function Wishes() {
       <Link to="/add">
         <Button>{/* <span>🎁</span> */}⬅</Button>
       </Link>
+
+      <Button onClick={handleDelete}>DELETE</Button>
     </div>
   );
 }
