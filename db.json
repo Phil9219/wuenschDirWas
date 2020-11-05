@@ -2,11 +2,63 @@
   "lists": [
     {
       "id": 1,
-      "title": "Philipp's List"
+      "title": "Philipp's List",
+      "wishes": ["Socken", "Bäume", "Tische", "Vögel"]
     },
     {
       "id": 2,
-      "title": "Leon's List"
+      "title": "Leon's List",
+      "wishes": ["Blaue Farbe", "Kaffee"]
+    },
+    {
+      "id": 3,
+      "title": "Peter's List",
+      "wishes": ["Flaschen"]
+    },
+    {
+      "id": 4,
+      "title": "Sarah's List",
+      "wishes": ["Laptop", "Maus"]
+    },
+    {
+      "id": 5,
+      "title": "Jill's List",
+      "wishes": ["iPhone", "Cola"]
+    },
+    {
+      "id": 6,
+      "title": "Arthur's List",
+      "wishes": ["Wasser", "Milch"]
+    },
+    {
+      "id": 7,
+      "title": "Mandy's List",
+      "wishes": ["Urlaub", "Blumen"]
+    },
+    {
+      "id": 8,
+      "title": "Butch's List",
+      "wishes": ["Besteck"]
+    },
+    {
+      "id": 9,
+      "title": "Sandro's List",
+      "wishes": ["Socken", "Boxershorts", "Schlafanzug"]
+    },
+    {
+      "id": 10,
+      "title": "Hubi's List",
+      "wishes": []
+    },
+    {
+      "id": 11,
+      "title": "Abraham's List",
+      "wishes": ["Blumen"]
+    },
+    {
+      "id": 12,
+      "title": "Jenny's List",
+      "wishes": ["Blaue Farbe"]
     }
   ]
 }

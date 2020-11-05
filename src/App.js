@@ -28,7 +28,7 @@ function App() {
           <WishList />
         </Route>
 
-        <Route path="/wish/:name">
+        <Route path="/wish/:listId">
           <Wishes />
         </Route>
 
